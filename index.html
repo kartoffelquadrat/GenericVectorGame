@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Responsive Sprites Demo</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- UI logic related to dynamic positioning of overlay UI elements-->
+    <script src="renderer.js"></script>
+
+    <!-- Properties file with all absolute positions (unscaled backdrop serves as coordinate system) of overlay elements.-->
+    <script src="absolutePositions.js"></script>
+
+</head>
+
+<!--gradient as background, no scroll bars-->
+<body id="gradient" class="full-height" onload="enableRerenderOnResize(); render()">
+
+<!--the actual board with all game sprites-->
+<div id="spriteContainer">
+    <img id="board" src='sprites/backdrop.png'/>
+    <img id="company-worldwide" src='sprites/companies/worldwide.png' class="overlay"/>
+    <img id="company-sackson" src='sprites/companies/sackson.png' class="overlay"/>
+</div>
+
+</body>
+</html>
