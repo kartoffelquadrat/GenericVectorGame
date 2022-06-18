@@ -6,7 +6,7 @@ A minimal template for vector based browser games.
 
 What you actually want
 
- * game board that entered, maximizes space, just scales perfectly. (Ref to Generic...)
+ * game board that entered, maximizes space, just scales perfectly. (dont ref generic, JS part has been removed)
  * support for vector based board layouts, design with preferred vector workbench.
  * targeted element manipulation, for selective updates of UI elements.
 
@@ -34,8 +34,7 @@ Features:
 
 How does it actually work.
 
- * Perfect fit. Not so simple with CSS. A lot easier to just do the maths yourself and scale things with JS. This logic is in:... Algo described in ...
-    * Note: The rendering algorithm is even sophisticated enough to perfectly scale and position overlay elements, so in principle you can stack multiple svgs using their relative postions. See...
+ * Perfect fit. Always centered, always using max available space.
  * Custom SVGs. Most thingys export svgs that will be regognized out of box. Just make your own... name it... place it in...
  * Custom IDs. Depends on your Graphic tool, but for OmniGraffle I provided a little script that ensures the IDs you set in the software are also used as object IDs.
     * Set Object IDs in omnigraffle
