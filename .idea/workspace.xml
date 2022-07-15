@@ -29,6 +29,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,7 +55,8 @@
       <workItem from="1655558859753" duration="3274000" />
       <workItem from="1655563301740" duration="225000" />
       <workItem from="1655823556331" duration="18000" />
-      <workItem from="1657897081261" duration="100000" />
+      <workItem from="1657897081261" duration="121000" />
+      <workItem from="1657899014176" duration="1097000" />
     </task>
     <servers />
   </component>
@@ -49,6 +64,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="333" y="218" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1657899235675">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="333" y="218" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1280.775@0.25.1280.775" timestamp="1657899235675" />
     <state x="1978" y="-337" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1655560899267">
       <screen x="1280" y="-615" width="1920" height="1055" />
     </state>
