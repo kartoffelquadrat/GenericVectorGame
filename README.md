@@ -7,7 +7,8 @@ A minimal template for vector based browser games.
 What you actually want
 
  * game board that entered, maximizes space, just scales perfectly. (dont ref generic, JS part has been removed)
- * support for vector based board layouts, design with preferred vector workbench.
+ * support for vector based board layouts, design with preferred vector workbench.  
+~~See internal project [svgpatch](svgpatch), which places the name tags of Omnigraffle Vector graphics as ID elements.~~ Outdated. See "SvgPatcher" project in Code dir.
  * targeted element manipulation, for selective updates of UI elements.
 
 This repo is a minimal setup of all required to support the above. Can be used as template for your own games. Also comes with instructions, what needs to be done to swap default graphics by your own game design.
