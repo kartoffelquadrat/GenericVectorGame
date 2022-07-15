@@ -22,4 +22,9 @@ public class WebController {
     public String getLandingPage() {
         return "board";
     }
+
+    @RequestMapping("/bu")
+    public String getBackupLandung() {
+        return "bu";
+    }
 }
