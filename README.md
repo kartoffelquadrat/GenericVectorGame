@@ -20,6 +20,7 @@ How to test the sample ui:
  * Clone this repo
  * Power up with ```mvn clean package spring-boot:run``` (requires java, maven)
  * Access the landing page: [```http://127.0.0.1:8080/board```](http://127.0.0.1:8080/board).
+ * Don't actually [access the static resource](file:///Users/schieder/Code/GenericVectorGame/src/main/resources/index.html)!
 
 Features:
  

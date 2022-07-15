@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Responsive Sprites Demo</title>
+<!--    https://stackoverflow.com/a/53795590-->
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+<!--    &lt;!&ndash; UI logic related to dynamic positioning of overlay UI elements&ndash;&gt;-->
+<!--    <script src="renderer.js"></script>-->
+
+<!--    &lt;!&ndash; Properties file with all absolute positions (unscaled backdrop serves as coordinate system) of overlay elements.&ndash;&gt;-->
+<!--    <script src="absolutePositions.js"></script>-->
+
+</head>
+
+<!--gradient as background, no scroll bars-->
+<body id="gradient" class="full-height">
+
+<!--the actual board-->
+<div id="spriteContainer">
+
+<!--    TODO, use file reference instead / This will only work with active application container. DOMs cannot be manipulated on FS access.-->
+    <img id="board" src='patchedVectorBoard.svg'/>
+<!--    Note: If SVG sources pasted here for local FS testing, make sure width / height are something gigantic that triggers CSS rendering, e.g. 5000x5000.-->
+
+</div>
+
+</body>
+</html>
