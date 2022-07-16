@@ -11,13 +11,12 @@ function getSquareElement() {
  * https://css-tricks.com/snippets/javascript/random-hex-color/
  * @return {string}
  */
-function setRandomColour()
-{
+function setRandomColour() {
     // This function is called from the SVG so "document" refers to the svg, not the entire page.
     let aRectangleWithIdSquare1 = document.getElementById('VID-SQUARE1');
     console.log(aRectangleWithIdSquare1);
     let rect = aRectangleWithIdSquare1.childNodes[1]; // TODO: find more elegant way to identify element...
-    rect.setAttribute("fill", "#"+Math.floor(Math.random()*16777215).toString(16));
+    rect.setAttribute("fill", "#" + Math.floor(Math.random() * 16777215).toString(16));
 }
 
 
@@ -25,7 +24,9 @@ function registerHandlers() {
 
     console.log("DOM tree is ready");
     let rect = getSquareElement();
-    // The target function is actually embedded in the target svg, so it shoudl not be a nested function
+    // The target function is actually embedded in the target svg, so it should not be a nested function
+    // TODO: figure out a way to have an extra file only for the rest calls, and have that file referenced by SVG.
+    // Maybe even embed that file by the SVG patcher.
     rect.setAttribute("onclick", "setRandomColour()");
 }
 
