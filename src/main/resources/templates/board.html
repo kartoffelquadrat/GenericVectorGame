@@ -15,14 +15,14 @@
 </head>
 
 <!--gradient as background, no scroll bars-->
-<body onload="registerHandlers()" id="gradient" class="full-height">
+<body onload="registerHandlersWhenSvgLoaded()" id="gradient" class="full-height">
 
 <!--the actual board-->
 <div id="spriteContainer">
 
-    <!--    Reference the patched SVG here-->
-<!--    TODO: figure out how to use an object element instead of image and still have it displayed...-->
-    <img id="board" src='patchedVectorBoard.svg'/>
+    <!--    Reference the patched SVG here, "img" cannot be used, because we want to modify the svg DOM programmatically. This is why we use "object" instead.-->
+    <!--    <img id="board" src='patchedVectorBoard.svg'/>-->
+    <object id="board" type="image/svg+xml" data="patchedVectorBoard.svg"></object>
 
     <!--    Register any handler that fiddles around with the IDs contained in the PATCHED svg-->
     <!--possibly:-->
