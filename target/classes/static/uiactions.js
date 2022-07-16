@@ -1,8 +1,3 @@
-function showAlert() {
-
-    alert("yay");
-}
-
 function getSquareElement() {
     // https://www.petercollingridge.co.uk/tutorials/svg/interactive/javascript/
     let svg = document.getElementById('board');
@@ -16,15 +11,13 @@ function getSquareElement() {
  * https://css-tricks.com/snippets/javascript/random-hex-color/
  * @return {string}
  */
-function getRandomColour()
+function setRandomColour()
 {
-    return "#"+Math.floor(Math.random()*16777215).toString(16);
-}
-
-function randomizeRectColour() {
-
-    let rect = getSquareElement();
-    rect.setAttribute("fill", getRandomColour());
+    // This function is called from the SVG so "document" refers to the svg, not the entire page.
+    let aRectangleWithIdSquare1 = document.getElementById('VID-SQUARE1');
+    console.log(aRectangleWithIdSquare1);
+    let rect = aRectangleWithIdSquare1.childNodes[1]; // TODO: find more elegant way to identify element...
+    rect.setAttribute("fill", "#"+Math.floor(Math.random()*16777215).toString(16));
 }
 
 
@@ -32,7 +25,8 @@ function registerHandlers() {
 
     console.log("DOM tree is ready");
     let rect = getSquareElement();
-    rect.setAttribute("onclick", "alert(\"clicked!\")");
+    // The target function is actually embedded in the target svg, so it shoudl not be a nested function
+    rect.setAttribute("onclick", "setRandomColour()");
 }
 
 
