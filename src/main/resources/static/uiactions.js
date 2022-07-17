@@ -4,6 +4,10 @@
 
 function fillWithRandomColour(id) {
     let g = document.getElementById(id);
-    let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+
+    // Random colour string generator: https://stackoverflow.com/a/5092872
+    let randomColor = "#000000".replace(/0/g, function () {
+        return (~~(Math.random() * 16)).toString(16);
+    });
     g.childNodes[1].setAttribute("fill", randomColor);
 }
