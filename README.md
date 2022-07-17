@@ -1,6 +1,7 @@
 # Generic Vector Game
 
-A minimal template for vector based browser games.
+A minimal template for vector based browser games.  
+TODO: enable text noselect: https://stackoverflow.com/a/4407335
 
 ## About
 
