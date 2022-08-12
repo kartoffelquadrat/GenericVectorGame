@@ -9,7 +9,6 @@
     <!--    Jquery, to have access to ready function which tells us when we can access DOM safely.-->
     <script type="text/javascript" th:src="@{/jquery.min.js}"></script>
 
-
     <!--    Reference a little JS script file that has some handler logic, invoked on program startup-->
     <script src="registry.js"></script>
 </head>
@@ -24,6 +23,7 @@
     <!--    <img id="board" src='patchedVectorBoard.svg'/>-->
     <object id="board" type="image/svg+xml" data="patchedVectorBoard.svg"></object>
 
+    <!-- Add a listener for async updates...-->
     <!--    Register any handler that fiddles around with the IDs contained in the PATCHED svg-->
     <!--possibly:-->
     <!--    https://stackoverflow.com/a/16648680-->

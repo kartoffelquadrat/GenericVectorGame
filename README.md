@@ -44,6 +44,12 @@ How does it actually work.
     * Export SVG
     * Patch SVG (ensures the ids are actually used as SVG ids, not anything else)
     * Adapt JS listeners
+    
+## Possible extensions
+
+ * [Draggable elements](https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/)
+ * [Server Side State Attributes](...), e.g. generate new colour on server side
+ * [Automatic Long Poll Updates](https://github.com/kartoffelquadrat/AsyncRestLib) for multi client support
 
 ## Contact / Pull Requests
 

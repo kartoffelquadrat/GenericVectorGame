@@ -59,5 +59,15 @@
             </g>
         </g>
     </g>
+    <style xml:space="preserve">        svg text {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                }
+                svg text::selection {
+                background: none;
+                }
+    </style>
     <script xlink:actuate="onLoad" xlink:href="/gvg/uiactions.js" xlink:show="other" xlink:type="simple"/>
 </svg>
