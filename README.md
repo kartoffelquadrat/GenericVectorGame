@@ -1,51 +1,40 @@
 # Generic Vector Game
 
-A minimal template for vector based browser games.  
-TODO: enable text noselect: https://stackoverflow.com/a/4407335
+A minimal demo for svg based browser games.
 
 ## About
 
-What you actually want
-
- * game board that entered, maximizes space, just scales perfectly. (dont ref generic, JS part has been removed)
- * support for vector based board layouts, design with preferred vector workbench.  
-~~See internal project [svgpatch](svgpatch), which places the name tags of Omnigraffle Vector graphics as ID elements.~~ Outdated. See "SvgPatcher" project in Code dir.
- * targeted element manipulation, for selective updates of UI elements.
-
-This repo is a minimal setup of all required to support the above. Can be used as template for your own games. Also comes with instructions, what needs to be done to swap default graphics by your own game design.
+It is more convenient to create a fancy game UI in a vector editor than in plan HTML/CSS. Yet there are some hurdles before you can use an SVG UI for a decend browser game. This repo serves as template for some standard features:
+ * [Perfect size and position](src/main/resources/static/style.css): The UI shows centered and uses as much space as available. On Window resize, the sprite adapts dynamically.
+ * [Custom, SVG based board](#custom-board): The UI shown originates a Vector-Editor (Omnigraffle). It was exported to SVG and [auto patched](https://github.com/kartoffelquadrat/SvgPatcher). No manual changes were made to the svg file.
+ * [Targeted DOM manipulation](src/main/resources/static/uiactions.js): The top right tile changes to a random colour on click. JavaScript registers interaction and modifies the DOM.
 
 ## Try it out
 
-How to test the sample ui:
+Build and run
 
  * Clone this repo
- * Power up with ```mvn clean package spring-boot:run``` (requires java, maven)
- * Access the landing page: [```http://127.0.0.1:8080/board```](http://127.0.0.1:8080/board).
- * Don't actually [access the static resource](file:///Users/schieder/Code/GenericVectorGame/src/main/resources/index.html)!
+ * Power up the backend with ```mvn clean package spring-boot:run``` (requires java, maven)
+ * Access the landing page: [```http://127.0.0.1:8080/gvg/board```](http://127.0.0.1:8080/gvg/board).
 
-Features:
- 
- * resize
- * Based on SVG, link to SVG / Omnigraffle file.
- * targeted manipulation (click an element to toggle colour)
+Test
 
-## Custom Board
+ * Resize and be happy about perfect responsive adapting.
+ * Click like crazy on the top right tile and watch the colours change.
 
- * 
-
-## Internals
-
-How does it actually work.
-
- * Perfect fit. Always centered, always using max available space.
- * Custom SVGs. Most thingys export svgs that will be regognized out of box. Just make your own... name it... place it in...
- * Custom IDs. Depends on your Graphic tool, but for OmniGraffle I provided a little script that ensures the IDs you set in the software are also used as object IDs.
-    * Set Object IDs in omnigraffle
-    * Export SVG
-    * Patch SVG (ensures the ids are actually used as SVG ids, not anything else)
-    * Adapt JS listeners
+ > If you are wondering why we need a server - you cannot modify the DOM of a loaded SVG with JavaScript, if the file resides on disk. That is actually a security feature of your browser. So we use a webserver to bypass file-system access of the SVG.
     
-## Possible extensions
+## How to mod
+
+If you want to use your own SVG and DOM manipulations, here is what needs to be done:
+
+ * Craft your own SVG in a vector program, e.g. *Omnigraffle*. Then export to SVG and [send the SVG through the Patcher](https://github.com/kartoffelquadrat/SvgPatcher).
+ * Define your own DOM listeners in ```registry.js```
+ * Define your own DOM manipulations in ```uiactions.js```
+ * Clean, build, deploy: ```mvn clean package spring-boot:run```
+ * Access at [http://127.0.0.1:8080/gvg/board](http://127.0.0.1:8080/gvg/board)
+    
+## Future extensions
 
  * [Draggable elements](https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/)
  * [Server Side State Attributes](...), e.g. generate new colour on server side
