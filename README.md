@@ -2,6 +2,8 @@
 
 A minimal template and demo for svg based browser games.
 
+![demo](demo.gif)
+
 ## About
 
 A fancy game UI is easier designed in a vector editor than in plan HTML/CSS. Yet there are some hurdles before your SVG may serve as a decent browser game.  
