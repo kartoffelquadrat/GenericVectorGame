@@ -1,10 +1,12 @@
 # Generic Vector Game
 
-A minimal demo for svg based browser games.
+A minimal template and demo for svg based browser games.
 
 ## About
 
-It is more convenient to create a fancy game UI in a vector editor than in plan HTML/CSS. Yet there are some hurdles before you can use an SVG UI for a decend browser game. This repo serves as template for some standard features:
+A fancy game UI is easier designed in a vector editor than in plan HTML/CSS. Yet there are some hurdles before your SVG may serve as a decent browser game.  
+This repo serves as demo and template for the most standard features:
+
  * [Perfect size and position](src/main/resources/static/style.css): The UI shows centered and uses as much space as available. On Window resize, the sprite adapts dynamically.
  * [Custom, SVG based board](#custom-board): The UI shown originates a Vector-Editor (Omnigraffle). It was exported to SVG and [auto patched](https://github.com/kartoffelquadrat/SvgPatcher). No manual changes were made to the svg file.
  * [Targeted DOM manipulation](src/main/resources/static/uiactions.js): The top right tile changes to a random colour on click. JavaScript registers interaction and modifies the DOM.
