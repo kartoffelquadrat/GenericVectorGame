@@ -4,6 +4,17 @@
      contentScriptType="application/ecmascript" contentStyleType="text/css" height="5000"
      preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="125.3 193.4 211.2 211.5" width="5000"
      zoomAndPan="magnify">
+    <style>
+        svg text {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+        svg text::selection {
+        background: none;
+        }
+    </style>
     <defs>
         <font-face ascent="951.9958" cap-height="714" descent="-212.99744" font-family="Helvetica Neue" font-size="16"
                    font-weight="400" panose-1="2 0 5 3 0 0 0 2 0 4" slope="0" underline-position="-100"
@@ -52,7 +63,7 @@
                 <rect height="105" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                       width="105" x="231" y="298.9"/>
                 <text fill="black" transform="translate(236 342.176)">
-                    <tspan fill="black" font-family="Helvetica Neue" font-size="16" font-weight="400" x="34.756" y="15">
+                    <tspan class="noselect" fill="black" font-family="Helvetica Neue" font-size="16" font-weight="400" x="34.756" y="15">
                         Yay
                     </tspan>
                 </text>
