@@ -1,4 +1,4 @@
-# Generic Vector Game
+# Generic Vector Browsergame
 
 A minimal template and demo for svg based browser games.
 
