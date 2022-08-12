@@ -2,7 +2,7 @@
 
 A minimal template and demo for svg based browser games.
 
-![demo](demo.gif)
+![demo](markdown/demo.gif)
 
 ## About
 
