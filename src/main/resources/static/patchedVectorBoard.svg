@@ -29,8 +29,8 @@
                     </tspan>
                 </text>
             </g>
-            <g id="Graphic_8">
-                <title>VID-CIRCLE</title>
+            <g id="VID-CIRCLE">
+
                 <circle cx="178.4" cy="351.8" fill="#ccc" r="52.6000831123552"/>
                 <circle cx="178.4" cy="351.8" r="52.6000831123552" stroke="black" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="1"/>
