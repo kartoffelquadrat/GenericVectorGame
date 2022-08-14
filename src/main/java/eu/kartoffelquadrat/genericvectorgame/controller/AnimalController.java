@@ -48,7 +48,7 @@ public class AnimalController {
      *             is up to date (the client MD5 matches the MD5 of the state on server side).
      * @return a random animal as string
      */
-    @GetMapping("/animals/animal")
+    @GetMapping(path="/animals/animal", produces = "application/json;charset=UTF-8")
     public DeferredResult<ResponseEntity<String>> getAnimal(@RequestParam(required = false) String hash) {
 
         // In case a hash was provided, switch for long polling mode

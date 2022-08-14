@@ -16,18 +16,37 @@ function registerHandlers() {
     console.log("DOM tree is ready");
 
     // Long list of actions associated to individual elements.
+
+    // A first handler
     let rect = getSvgElementById('VID-SQUARE1');
     rect.setAttribute("onclick", "fillWithRandomColour(\"VID-SQUARE1\")");
 
     // A second handler that includes a backend call
     let diamondName = "VID-CIRCLE"
     let circle = getSvgElementById(diamondName)
-    circle.setAttribute("onclick", "fillWithRandomAnimalNameFromBackend(\""+diamondName+"\")");
+
+    // on click send rest call server that randomized backend state of animal resource
+    circle.setAttribute("onclick", "requestAnimalUpdate()");
 }
 
-// Here we invoke jQuery to only associate the hondlers one the SVG is for sure loaded.
+/**
+ * Any asynchronous endpoint to be observed is registered here. I tis important to only start up the observers once
+ * the SVG is loaded, since otherwise the retrieved results cannot be visualized.
+ */
+function registerResourceObservers() {
+
+    console.log("Registering resource observers");
+    observeResource("/gvg/animals/animal?hash=", updateDisplayedAnimalName, function () {
+        console.error("Long Poll Failed.");
+    }, "");
+
+}
+
+// Here we invoke jQuery to only associate the handlers once the SVG is for sure loaded. Also starts the ARL resource
+// observers.
 function registerHandlersWhenSvgLoaded() {
 
     console.log("Waiting for DOM tree to be ready...");
     $(document).ready(registerHandlers);
+    $(document).ready(registerResourceObservers);
 }

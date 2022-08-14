@@ -11,18 +11,10 @@ function fillWithRandomColour(id) {
     targetElement.childNodes[1].setAttribute("fill", randomColor);
 }
 
-function fillWithRandomAnimalNameFromBackend(id) {
-    let targetElement = document.getElementById(id);
-    console.log(targetElement);
-    let textField = targetElement.childNodes[4]
-    console.log(textField);
-    let tspan = textField.childNodes[0];
-    console.log(tspan);
-
-    // send rest call to retrieve random animal name
-    fetch("animals/animal")
-        .then((result) => result.text())
-        .then((text) => textField = text);
+function requestAnimalUpdate() {
+    fetch("animals/animal", {method: 'POST'});
 }
 
-// targetElement.value = text
+function updateDisplayedAnimalName(stateBundle) {
+    console.log("updating animal name to: " + stateBundle.animal)
+}
