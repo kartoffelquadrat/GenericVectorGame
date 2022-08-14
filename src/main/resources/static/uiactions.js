@@ -17,4 +17,5 @@ function requestAnimalUpdate() {
 
 function updateDisplayedAnimalName(stateBundle) {
     console.log("updating animal name to: " + stateBundle.animal)
+    // Todo: actually change the name in the SVG dom tree.
 }
