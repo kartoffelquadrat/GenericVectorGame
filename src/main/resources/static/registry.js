@@ -28,7 +28,6 @@ function registerHandlers() {
     // The remaining handlers
     let rect2 = getSvgElementById('VID-SQUARE2');
     rect2.setAttribute("onclick", "printMessage(\"Yay\")");
-    // A first handler
     let diamond = getSvgElementById('VID-DIAMOND');
     diamond.setAttribute("onclick", "printMessage(\"<>\")");
 
