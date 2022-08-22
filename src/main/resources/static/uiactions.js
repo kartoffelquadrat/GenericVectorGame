@@ -11,6 +11,10 @@ function fillWithRandomColour(id) {
     targetElement.childNodes[1].setAttribute("fill", randomColor);
 }
 
+function printMessage(message) {
+    console.log(message);
+}
+
 function requestAnimalUpdate() {
     fetch("animals/animal", {method: 'POST'});
 }

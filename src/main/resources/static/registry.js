@@ -25,6 +25,13 @@ function registerHandlers() {
     let diamondName = "VID-CIRCLE"
     let circle = getSvgElementById(diamondName)
 
+    // The remaining handlers
+    let rect2 = getSvgElementById('VID-SQUARE2');
+    rect2.setAttribute("onclick", "printMessage(\"Yay\")");
+    // A first handler
+    let diamond = getSvgElementById('VID-DIAMOND');
+    diamond.setAttribute("onclick", "printMessage(\"<>\")");
+
     // on click send rest call server that randomized backend state of animal resource
     circle.setAttribute("onclick", "requestAnimalUpdate()");
 }
