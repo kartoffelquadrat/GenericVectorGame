@@ -8,7 +8,7 @@ function fillWithRandomColour(id) {
     let randomColor = "#000000".replace(/0/g, function () {
         return (~~(Math.random() * 16)).toString(16);
     });
-    targetElement.childNodes[1].setAttribute("fill", randomColor);
+    targetElement.children[0].setAttribute("fill", randomColor);
 }
 
 function printMessage(message) {
@@ -17,9 +17,4 @@ function printMessage(message) {
 
 function requestAnimalUpdate() {
     fetch("animals/animal", {method: 'POST'});
-}
-
-function updateDisplayedAnimalName(stateBundle) {
-    console.log("updating animal name to: " + stateBundle.animal)
-    // Todo: actually change the name in the SVG dom tree.
 }

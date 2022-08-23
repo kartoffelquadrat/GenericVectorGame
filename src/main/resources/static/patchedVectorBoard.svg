@@ -51,4 +51,4 @@
                 svg text::selection {
                 background: none;
                 }
-</style><script xlink:actuate="onLoad" xlink:href="/gvg/uiactions.js" xlink:show="other" xlink:type="simple"/></svg>
+</style><script xlink:actuate="onLoad" xlink:href="/gvg/svguiactions.js" xlink:show="other" xlink:type="simple"/></svg>
