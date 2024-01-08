@@ -1,0 +1,1 @@
+svg top element must indicate width and height in correct ratio (but al realt pixel size, to ensure full screen)

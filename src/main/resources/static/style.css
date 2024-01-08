@@ -1,18 +1,46 @@
 /* Colour scheme for pixels not covered by game UI*/
 #gradient {
-    background-image: linear-gradient(to bottom right, #343434, #b7b7b7);
+    background-color: #5f5f5f;
 }
 
 /* Undecorated body (no scrollbars, entire available canvas used)*/
 html, body {
-    overflow: hidden; /* Hide scrollbars */
-    height: 100%;
+    /*position: sticky;*/
+    /*overflow: hidden; !* Hide scrollbars *!*/
+    /*height: 100%;*/
+    /*if height enabled: disables ios scrolling, but adds ugly margin to content.*/
     margin: 0;
     padding: 0;
 }
 
+/*Disable content, when app orientation in portrat / not supported.*/
+@media (orientation: portrait) {
+    #spriteContainer {
+        display: none;
+    }
+}
+
+/*prevent bouncing*/
+html {
+    /*touch-action: none;*/
+
+    /*height  : 100%;*/
+    overflow: hidden;
+    position: relative;
+}
+body {
+    /*touch-action: none;*/
+
+    height  : 100%;
+    overflow: auto;
+    position: relative;
+}
+
+
 /* Centered boards, maximum size that does not lead to cropping.*/
 #board {
+    /*position: fixed;*/
+
     display: block;
     padding: 0;
     margin: 0 auto;

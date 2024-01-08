@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- support for native iOS app-->
     <!--    tags for fake native app support on iOS-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport"
-          content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1"/>
-    <meta name="apple-mobile-web-app-title" content="G.V.G.">
+    <meta name="viewport" content="viewport-fit=cover, target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Battle">
+
+<!--    From xbox cloud gaming, ios debug:-->
+<!--    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=2.0"/>-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!--    <meta name="apple-mobile-web-app-capable" content="yes"/>-->
 
     <meta charset="utf-8">
-    <title>Responsive Sprites Demo</title>
+    <title>Battle</title>
     <!--    https://stackoverflow.com/a/53795590-->
     <link rel="stylesheet" th:href="@{/style.css}">
 
@@ -23,6 +32,8 @@
     <!--    THIS ONE WE DO NOT WANT TO REFERENCE. IS FOR CALLS FROM SVG ONLY.-->
     <!--    <script src="svguiactions.js"></script>-->
     <script src="asyncuiactions.js"></script>
+<!--    <script src="disablerubberband.js"></script>-->
+
     <script src="md5.js"></script>
 </head>
 
