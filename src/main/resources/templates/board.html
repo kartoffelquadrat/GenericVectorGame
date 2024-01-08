@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- support for native iOS app-->
-    <!--    tags for fake native app support on iOS-->
+    <!-- support for native iOS app, app icon, hidden taskbar, etc.-->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="viewport-fit=cover, target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -10,11 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-title" content="Battle">
-
-<!--    From xbox cloud gaming, ios debug:-->
-<!--    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=2.0"/>-->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<!--    <meta name="apple-mobile-web-app-capable" content="yes"/>-->
 
     <meta charset="utf-8">
     <title>Battle</title>
@@ -22,6 +17,7 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 
     <!--    Jquery, to have access to ready function which tells us when we can access DOM safely.-->
+<!--    TODO: investigate timer alternative, to get rid of jquery.-->
     <script type="text/javascript" th:src="@{/jquery.min.js}"></script>
 
     <!--    Reference a little JS script file that has some handler logic, invoked on program startup-->
@@ -32,16 +28,18 @@
     <!--    THIS ONE WE DO NOT WANT TO REFERENCE. IS FOR CALLS FROM SVG ONLY.-->
     <!--    <script src="svguiactions.js"></script>-->
     <script src="asyncuiactions.js"></script>
-<!--    <script src="disablerubberband.js"></script>-->
+
+    <script src="detectNonShortcut.js"></script>
+
 
     <script src="md5.js"></script>
 </head>
 
 <!--gradient as background, no scroll bars-->
-<body onload="registerHandlersWhenSvgLoaded()" id="gradient" class="full-height">
+<body onload="registerHandlersWhenSvgLoaded(), detectNonShortcut()" id="gradient" class="full-height">
 
 <!--the actual board-->
-<div id="spriteContainer">
+<div id="spriteContainer" hidden>
 
     <!--    Reference the patched SVG here, "img" cannot be used, because we want to modify the svg DOM programmatically. This is why we use "object" instead.-->
     <!--    <img id="board" src='patchedVectorBoard.svg'/>-->
