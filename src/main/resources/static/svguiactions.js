@@ -1,8 +1,7 @@
-// This file is referenced by the patched svg. (Reference is auto added by patcher, since provided as runtime argument,
-// see "scripts/svgpatch.sh" Whenever "document shows up here, it actually refers to the SVG, not the HTML page."
+// This file lists javascript functions that are invoked by SVG interactions.
 
-function fillWithRandomColour(id) {
-    let targetElement = document.getElementById(id);
+function fillWithRandomColour(targetElement) {
+    // let targetElement = document.getElementById(id);
 
     // Random colour string generator: https://stackoverflow.com/a/5092872
     let randomColor = "#000000".replace(/0/g, function () {

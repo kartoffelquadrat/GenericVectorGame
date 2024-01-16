@@ -11,7 +11,7 @@ This repo serves as demo and template for the most standard features:
 
  * [Perfect size and position](src/main/resources/static/style.css): The UI shows centered and uses as much space as available. On Window resize, the sprite adapts dynamically.
  * [Custom, SVG based board](#custom-board): The UI shown originates a Vector-Editor (Omnigraffle). It was exported to SVG and [auto patched](https://github.com/kartoffelquadrat/SvgPatcher). No manual changes were made to the svg file.
- * [Targeted DOM manipulation](src/main/resources/static/uiactions.js): The top right tile changes to a random colour on click. JavaScript registers interaction and modifies the DOM.
+ * [Targeted DOM manipulation](src/main/resources/static/svguiactions.js): The top right tile changes to a random colour on click. JavaScript registers interaction and modifies the DOM.
 
 ## Try it out
 

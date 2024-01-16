@@ -9,7 +9,7 @@ function getSvgElementById(id) {
 // The trick here is to associate a function as handler, that appears in the "uiactions.js" file. "uiactions.js" is
 // embedded in the SVG so all method calls in there can be resolved by the SVGs internal JS interpreter. E.g. the
 // "fillWithRandomColour" function can be resolved by the handler associates to rect, since the "fillWithRandomColour"
-// function appears in "uiactions.js" and that file was embedded as reference in the svg by the patcher (filename was
+// function appears in "svguiactions.js" and that file was embedded as reference(!) in the svg by the patcher (filename was
 // provided as runtime argument for the patcher. See "scripts/svgpatch.sh").
 function registerHandlers() {
 
@@ -19,21 +19,29 @@ function registerHandlers() {
 
     // A first handler
     let rect = getSvgElementById('VID-SQUARE1');
-    rect.setAttribute("onclick", "fillWithRandomColour(\"VID-SQUARE1\")");
+    // rect.setAttribute("onclick", "fillWithRandomColour(\"VID-SQUARE1\")");
+    rect.addEventListener("click",
+        function() {fillWithRandomColour(rect)}, false);
 
     // A second handler that includes a backend call
-    let diamondName = "VID-CIRCLE"
-    let circle = getSvgElementById(diamondName)
+    // on click send rest call server that randomized backend state of animal resource
+    let circleName = "VID-CIRCLE"
+    let circle = getSvgElementById(circleName)
+    circle.addEventListener("click",
+        function() {requestAnimalUpdate()}, false);
+
+
 
     // The remaining handlers
     let rect2 = getSvgElementById('VID-SQUARE2');
-    rect2.setAttribute("onclick", "printMessage(\"Yay\")");
+    rect2.addEventListener("click",
+        function() {printMessage("Yay")}, false);
     let diamond = getSvgElementById('VID-DIAMOND');
-    diamond.setAttribute("onclick", "printMessage(\"<>\")");
+    diamond.addEventListener("click",
+        function() {printMessage("<>")}, false);
 
-    // on click send rest call server that randomized backend state of animal resource
-    circle.setAttribute("onclick", "requestAnimalUpdate()");
 }
+
 
 /**
  * Any asynchronous endpoint to be observed is registered here. I tis important to only start up the observers once
