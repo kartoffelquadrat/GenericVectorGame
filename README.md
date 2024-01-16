@@ -41,8 +41,6 @@ If you want to use your own SVG and DOM manipulations, here is what needs to be 
 ## Future extensions
 
  * [Draggable elements](https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/)
- * [Server Side State Attributes](...), e.g. generate new colour on server side
- * [Automatic Long Poll Updates](https://github.com/kartoffelquadrat/AsyncRestLib) for multi client support
 
 ## Contact / Pull Requests
 
